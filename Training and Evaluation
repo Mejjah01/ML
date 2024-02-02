@@ -1,0 +1,12 @@
+# Training loop
+for epoch in range(epochs):
+    # Training steps...
+
+# Evaluation
+with torch.no_grad():
+    model.eval()
+    for inputs, labels in validation_loader:
+        outputs = model(inputs)
+        # Compute evaluation metric on validation set
+        metric_value = custom_metric(labels, outputs.argmax(dim=1).cpu().numpy())
+        print(f'Validation Custom Metric: {metric_value}')
