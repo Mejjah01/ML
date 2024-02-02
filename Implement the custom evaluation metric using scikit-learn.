@@ -1,0 +1,7 @@
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
+
+def custom_metric(y_true, y_pred):
+    # Implement your custom metric combining precision, recall, and accuracy
+    precision, recall, fscore, _ = precision_recall_fscore_support(y_true, y_pred, average='weighted')
+    accuracy = accuracy_score(y_true, y_pred)
+    return (precision + recall + accuracy) / 3.0
