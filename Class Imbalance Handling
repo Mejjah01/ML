@@ -1,0 +1,5 @@
+# Assuming you have class weights computed based on the dataset
+class_weights = [0.2, 0.8, 1.0, ...]
+
+# Use CrossEntropyLoss with weights
+criterion = nn.CrossEntropyLoss(weight=torch.tensor(class_weights))
